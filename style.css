@@ -1,4 +1,96 @@
+:root{
+    --liteModeThemColorBG: #cccccc;
+    --liteModeThemColorHeader: #3889e0;
+    --liteModeThemColorCardHeader1:#80b2e8;
+    --liteModeThemColorCardHeader2:#3889e0;
+
+    --DarkModeThemColorBG: #000;
+    --DarkModeThemColorCardBG: #20304f;
+    --DarkModeThemColorHeader1: #101d36;
+    --DarkModeThemColorHeader2: #515e7a;
+}
+
 body{
-    background: rgb(136,147,157);
-    background: linear-gradient(16deg, rgba(136,147,157,1) 0%, rgba(100,65,122,1) 100%);
+    font-family: Roboto;
+    padding: 20px;
+    background-color: var(--liteModeThemColorBG);
+}
+
+header{
+    background-color: var(--liteModeThemColorHeader);
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.card .card-header{
+    background-color: var(--liteModeThemColorCardHeader1);
+    transition: 0.2s;
+}
+
+.card:hover .card-header{
+    background-color: var(--liteModeThemColorCardHeader2);
+    transition: 0.2s;
+}
+
+.img{
+    background-color: black;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+}
+
+a{
+    text-decoration: none; 
+    color: black;
+}
+
+i{
+    font-size: 30px;
+    padding-right: 10px;
+}
+
+label{
+    position: absolute;
+    width: 45px;
+    height: 26px;
+    right: 20px;
+    top: 20px;
+    border: 2px solid;
+    border-radius: 20px;
+    border-color: var(--DarkModeThemColorBG);
+}
+
+label::before{
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    left: 1px;
+    top: 1px;
+    border-radius: 50%;
+    background: var(--DarkModeThemColorBG); 
+}
+
+label.active::before{
+    left: 20px;
+    background: var(--liteModeThemColorBG);
+}
+
+body.night{
+    background: var(--DarkModeThemColorBG);
+}
+
+.theme{
+    background: var(--DarkModeThemColorCardBG);
+    border: none !important;
+    color: white;
+}
+
+.card.theme .card-header{
+    background: var(--DarkModeThemColorHeader1);
+}
+
+.card.theme:hover .card-header{
+    background: var(--DarkModeThemColorHeader2);
 }
